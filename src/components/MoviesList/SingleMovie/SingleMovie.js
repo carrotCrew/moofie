@@ -19,7 +19,6 @@ class SingleMovie extends Component {
     const url = `https://image.tmdb.org/t/p/w342${this.props.movie.poster_path}`;
     const genresToAdd = await getGenre(this.props.movie.genre_ids, this.props.genresArr);
     this.setState({ posterURL: url, genres: await genresToAdd });
-    console.log(this.state.genres);
 
     themoviedb.get(`movie/${this.props.movie.id}/credits?api_key=4cfa00f017abc0bfb0633f700edde6da`)
       .then(resp => {

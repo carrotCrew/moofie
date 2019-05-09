@@ -17,7 +17,8 @@ class App extends Component {
     super(props);
     this.state = {
       movies: [],
-      genresArr: []
+      genresArr: [],
+      searchTerm: ''
     };
   }
 
@@ -31,12 +32,17 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  passSearchTerm = (searchTerm) => {
+    const term = searchTerm;
+    this.setState({ searchTerm: term});
+  }
+
   render() {
     return (
       <div className="page-wrapper">
-        <Header />
+        <Header callbackApp={this.passSearchTerm}/>
         <main className="content-wrapper">
-          <MoviesList movies={this.state.movies} genresArr={this.state.genresArr}/>
+          <MoviesList movies={this.state.movies} genresArr={this.state.genresArr} searchTerm={this.state.searchTerm}/>
         </main>
       </div>
     );
