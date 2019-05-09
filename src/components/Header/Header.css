@@ -1,0 +1,12 @@
+.header {
+    padding: 8px 40px;
+    background: var(--theme-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    width: 180px;
+}
+

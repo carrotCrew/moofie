@@ -1,11 +1,12 @@
 :root {
-  --theme-color: rgb(255, 221, 1);
+  --theme-color: rgb(255, 208, 0);
   --light-grey: rgb(199, 199, 199);
+  --main-font: 'Merriweather Sans', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: var(--main-font);
   background: rgb(255,255,255);
   font-size: 14px;
   margin: 0;
