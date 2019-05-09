@@ -3,19 +3,14 @@ import "./MoviesList.css";
 
 import SingleMovie from "./SingleMovie/SingleMovie";
 
-const MoviesList = () => {
-  return (
-    <section class="movies">
-      <SingleMovie />
-      <SingleMovie />
-      <SingleMovie />
-      <SingleMovie />
-      <SingleMovie />
-      <SingleMovie />
-      <SingleMovie />
-      <SingleMovie />
-    </section>
-  );
+class MoviesList extends React.Component {
+  render() {
+    return (
+      <section className="movies">
+        {this.props.movies.map(m => <SingleMovie movie={m} key={m.id} genresArr={this.props.genresArr} />)}
+      </section>
+      )
+  }
 };
 
 export default MoviesList;
