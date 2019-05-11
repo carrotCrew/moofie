@@ -20,7 +20,7 @@ class SingleMovie extends Component {
     const genresToAdd = await getGenre(this.props.movie.genre_ids, this.props.genresArr);
     this.setState({ posterURL: url, genres: await genresToAdd });
 
-    themoviedb.get(`movie/${this.props.movie.id}/credits?api_key=4cfa00f017abc0bfb0633f700edde6da`)
+    themoviedb.get(`movie/${this.props.movie.id}/credits?`)
       .then(resp => {
         const director = resp.data.crew.filter(p => p.job === "Director").map(p => p.name).join(', ');
         const cast = resp.data.cast.slice(0, 3).map(p => p.name).join(', ');
