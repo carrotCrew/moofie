@@ -52,7 +52,7 @@
     margin-top: 1%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #f0f0f0;
+    background-color: #e2e2e2;
     color: #666;
     text-align: center;
     padding: 3px;
@@ -60,7 +60,6 @@
 }
 
 .container {
-    
     width: 80%;
     margin: auto;
 }
@@ -72,6 +71,9 @@
     text-align: center;
     float: left;
     margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid td:hover {
