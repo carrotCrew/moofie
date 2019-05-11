@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import themoviedb from '../../../api/themoviedb';
 import getGenre from './getGenre';
 import "./SingleMovie.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MovieDetails from "../MovieDetails/MovieDetails";
+import TicketBuy from "../TicketBuy/TicketBuy";
 
 class SingleMovie extends Component {
   constructor(props) {
@@ -57,14 +58,8 @@ class SingleMovie extends Component {
           </p>
         </div>
         <div className="movie__actions">
-          <button className="movie__buy">Buy tickets</button>
-          <button className="movie__details">
-            More details
-            <FontAwesomeIcon
-              icon="angle-double-right"
-              className="movie__icon"
-            />
-          </button>
+          <TicketBuy name="movie__buy"/>
+          <MovieDetails />
         </div>
       </article>
     );

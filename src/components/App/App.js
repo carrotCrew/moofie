@@ -9,6 +9,7 @@ import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 //Components
 import Header from "../Header/Header";
 import MoviesList from "../MoviesList/MoviesList";
+//import MovieDetails from "../MovieDetails/MovieDetails";
 
 library.add(faSearch, faAngleDoubleRight);
 
