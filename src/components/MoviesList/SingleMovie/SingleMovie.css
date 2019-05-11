@@ -47,7 +47,7 @@
 }
 
 .movie__actions > * {
-  width: 50%;
+  width: 100%;
   background: none;
   border: none;
   cursor: pointer;
@@ -64,6 +64,7 @@
   /* border-bottom-left-radius: 15px; */
 }
 
+
 .movie__details {
   background-color: rgb(0,0,0,.7);
   color: white;
@@ -71,7 +72,7 @@
 }
 
 .movie__icon {
-  padding: 0 10px;
+  padding: 4 10px;
   font-size: 1.2em;
   transition: transform .3s ease-in;
 }

@@ -1,0 +1,92 @@
+
+.modal1 {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: "hd hd hd hd hd hd hd hd hd"
+        "sd sd sd sd sd sd main main main"
+        "ft ft ft ft ft ft ft ft ft";
+
+}
+
+.modal1>.header {
+    grid-area: hd;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 32px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.modal1>.actions {
+    grid-area: ft;
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+}
+.modal1>#seat-map {
+    grid-area: sd;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.modal1>.booking-details {
+    grid-area: main;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+ 
+.front {
+    width: 80%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f0f0f0;
+    color: #666;
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.container {
+    
+    width: 80%;
+    margin: auto;
+}
+
+.grid td {
+    width: 50px;
+    height: 50px;
+    border: 2px solid orange;
+    text-align: center;
+    float: left;
+    margin: 1%;
+}
+
+.grid td:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.reserved {
+    background: orange;
+    color: #fff;
+    display: inline-block;
+}
+
+.available {
+    color: #333;
+}
+
+
