@@ -1,24 +1,34 @@
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-content {
+    padding: 0;
+}
 
 .modal {
     font-size: 16px;
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-areas: "hd hd hd hd hd hd hd hd hd"
-    "sd sd main main main main main main main"
-    "ft ft ft ft ft ft ft ft ft";
-
 }
 
+.about {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+p {
+    margin: 5px;
+    line-height: 1.5em;
+}
 
+span {
+    font-size: 0.9rem;
+}
 
-.modal>.sidebar {
-    grid-area: sd;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 150px;
+.sidebar {
+    width: 50%;
+    padding: 10px;
 }
 
 .img1 {
@@ -31,6 +41,7 @@
     opacity: 0.8;
 
 }
+
 /* .img1::after {
         background-image: url(/gf/buttons/play/play_button_sprite2.png);
         position: absolute;
@@ -51,8 +62,7 @@
         z-index: 1;
 } */
 
-
- .modal>.header {
+ .modal > .header {
     grid-area: hd;
     width: 100%;
     border-bottom: 1px solid gray;
@@ -62,13 +72,12 @@
     margin-bottom: 5px;
 }
 
-.modal>.content {
-    grid-area: main;
-    width: 100%;
+.content {
+    width: 50%;
     padding: 10px 5px;
 }
 
-.modal>.actions {
+.modal > .actions {
     grid-area: ft;
     width: 100%;
     padding: 10px 5px;

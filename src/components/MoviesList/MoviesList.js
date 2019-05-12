@@ -9,7 +9,6 @@ class MoviesList extends React.Component {
     const allTitles = allMovies.map(m => m.title);
     const regex = new RegExp(searchTerm, "gi");
     const matchedTitles = allTitles.filter(t => t.match(regex));
-    console.log(matchedTitles);
     return allMovies.filter(m => matchedTitles.includes(m.title));
   };
 

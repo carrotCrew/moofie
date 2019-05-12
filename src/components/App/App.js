@@ -26,14 +26,14 @@ class App extends Component {
   componentWillMount() {
     themoviedb
       .get(
-        `movie/now_playing?api_key=4cfa00f017abc0bfb0633f700edde6da&language=en&page=1`
+        `movie/now_playing?language=en&page=1`
       )
       .then(resp => this.setState({ movies: resp.data.results }))
       .catch(err => console.log(err));
 
     themoviedb
       .get(
-        `genre/movie/list?api_key=4cfa00f017abc0bfb0633f700edde6da&language=en`
+        `genre/movie/list?language=en`
       )
       .then(resp => this.setState({ genresArr: resp.data.genres }))
       .catch(err => console.log(err));

@@ -21,36 +21,36 @@ class MovieDetails extends React.Component {
         <button className="close" onClick={close}>
           &times;
         </button>
-    <div className="header">{this.props.title} ({this.props.year})</div>
+        <div className="header">{this.props.title} ({this.props.year})</div>
 
-        <div className="content">
-          <p>
-            <span className="info__title">Release date:</span>
-            <span className="info__date">{this.props.release}</span>
-          </p>
-          <p>
-            <span className="info__title">Genre:</span>
-            <span className="info__genre">{this.props.genres}</span>
-          </p>
-          <p>
-            <span className="info__title">Cast:</span>
-            <span className="info__cast">{this.props.cast}</span>
-          </p>
-          <p>
-            <span className="info__title">Director:</span>
-            <span className="info__director">{this.props.director}</span>
-          </p>
-          <p>
-            <br />
-            {this.props.overview}
-          </p>
-        </div>
-        <div class="sidebar">
-          <img
-            className="img1"
-            src={this.props.poster}
-            alt="poster"
-          />
+        <div class="about">
+            <div class="sidebar">
+              <img
+                className="img1"
+                src={this.props.poster}
+                alt="poster"
+              />
+            </div>
+          <div className="content">
+            <p>
+              <span className="info__title">Release date:</span>
+              <span className="info__date">{this.props.release}</span>
+            </p>
+            <p>
+              <span className="info__title">Genre:</span>
+              <span className="info__genre">{this.props.genres}</span>
+            </p>
+            <p>
+              <span className="info__title">Cast:</span>
+              <span className="info__cast">{this.props.cast}</span>
+            </p>
+            <p>
+              <span className="info__title">Director:</span>
+              <span className="info__director">{this.props.director}</span>
+            </p>
+
+              <p class="overview">{this.props.overview}</p>
+          </div>
         </div>
 
         <div className="actions">
