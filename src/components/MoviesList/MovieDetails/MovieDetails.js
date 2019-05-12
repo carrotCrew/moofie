@@ -4,7 +4,9 @@ import "./MovieDetails.css";
 import TicketBuy from "../TicketBuy/TicketBuy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MovieDetails = () => (
+class MovieDetails extends React.Component {
+  render() {
+  return (
   <Popup
     trigger={
       <button className="movie__details">
@@ -19,37 +21,35 @@ const MovieDetails = () => (
         <button className="close" onClick={close}>
           &times;
         </button>
-        <div className="header"> Avengers: Koniec gry </div>
+    <div className="header">{this.props.title} ({this.props.year})</div>
 
         <div className="content">
           <p>
             <span className="info__title">Release date:</span>
-            <span className="info__date">2019-04-22</span>
+            <span className="info__date">{this.props.release}</span>
           </p>
           <p>
             <span className="info__title">Genre:</span>
-            <span className="info__genre">Adventure, Fantasy</span>
+            <span className="info__genre">{this.props.genres}</span>
           </p>
           <p>
             <span className="info__title">Cast:</span>
-            <span className="info__cast">Famous people</span>
+            <span className="info__cast">{this.props.cast}</span>
           </p>
           <p>
             <span className="info__title">Director:</span>
-            <span className="info__director">Famous person</span>
+            <span className="info__director">{this.props.director}</span>
           </p>
           <p>
             <br />
-            Po wymazaniu połowy życia we Wszechświecie przez Thanosa, Avengersi
-            starają się zrobić wszystko co konieczne, aby pokonać szalonego
-            tytana.
+            {this.props.overview}
           </p>
         </div>
-        <div class="siderbar">
+        <div class="sidebar">
           <img
             className="img1"
-            src="https://ssl-gfx.filmweb.pl/po/05/42/790542/7881430.6.jpg"
-            alt="plakat - Avengers: Koniec gry (2019)"
+            src={this.props.poster}
+            alt="poster"
           />
         </div>
 
@@ -68,6 +68,7 @@ const MovieDetails = () => (
       </div>
     )}
   </Popup>
-);
+  )}
+};
 
 export default MovieDetails;

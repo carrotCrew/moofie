@@ -36,7 +36,7 @@ class SingleMovie extends Component {
         <header className="movie__header">
           <div>
             <span className="movie__title">{this.props.movie.title} </span>
-            <span className="movie__year">(2019)</span>
+            <span className="movie__year">({this.props.movie.release_date.slice(0, 4)})</span>
           </div>
         </header>
         <div className="movie__info">
@@ -59,7 +59,15 @@ class SingleMovie extends Component {
         </div>
         <div className="movie__actions">
           <TicketBuy name="movie__buy"/>
-          <MovieDetails />
+          <MovieDetails
+            title={this.props.movie.title}
+            release={this.props.movie.release_date}
+            year={this.props.movie.release_date.slice(0, 4)}
+            genres={this.state.genres}
+            cast={this.state.cast}
+            director={this.state.director}
+            overview={this.props.movie.overview}
+            poster={this.state.posterURL} />
         </div>
       </article>
     );

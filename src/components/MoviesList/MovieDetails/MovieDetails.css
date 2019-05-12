@@ -8,7 +8,7 @@
     grid-template-areas: "hd hd hd hd hd hd hd hd hd"
     "sd sd main main main main main main main"
     "ft ft ft ft ft ft ft ft ft";
-    
+
 }
 
 
@@ -18,19 +18,18 @@
     grid-area: sd;
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 5px;
     width: 150px;
 }
 
 .img1 {
-    margin: 10px
+    width: 100%;
 }
 
 .img1:hover {
     box-shadow: 0 0 2px 1px rgba(238, 195, 1, 0.5);
     transition: opacity .1s ease-in;
     opacity: 0.8;
-    
+
 }
 /* .img1::after {
         background-image: url(/gf/buttons/play/play_button_sprite2.png);
@@ -90,7 +89,7 @@
     background: #ffffff;
     border-radius: 18px;
     border: 1px solid #cfcece;
-} 
+}
 
 .movie__details {
     background-color: rgb(0, 0, 0, .7);
