@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import themoviedb from '../../../api/themoviedb';
-import getGenre from './getGenre';
+import themoviedb from "../../../api/themoviedb";
+import getGenre from "./getGenre";
 import "./SingleMovie.css";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import TicketBuy from "../TicketBuy/TicketBuy";
@@ -9,34 +9,55 @@ class SingleMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posterURL: '',
+      posterURL: "",
       genres: [],
       cast: [],
       director: []
-    }
+    };
   }
 
-  async componentDidMount() {
-    const url = `https://image.tmdb.org/t/p/w342${this.props.movie.poster_path}`;
-    const genresToAdd = await getGenre(this.props.movie.genre_ids, this.props.genresArr);
-    this.setState({ posterURL: url, genres: await genresToAdd });
+  componentDidMount() {
+    const url = `https://image.tmdb.org/t/p/w342${
+      this.props.movie.poster_path
+    }`;
+    const genresToAdd = getGenre(
+      this.props.movie.genre_ids,
+      this.props.genresArr
+    );
+    this.setState({ posterURL: url, genres: genresToAdd });
 
-    themoviedb.get(`movie/${this.props.movie.id}/credits?`)
+    themoviedb
+      .get(`movie/${this.props.movie.id}/credits?`)
       .then(resp => {
-        const director = resp.data.crew.filter(p => p.job === "Director").map(p => p.name).join(', ');
-        const cast = resp.data.cast.slice(0, 3).map(p => p.name).join(', ');
+        const director = resp.data.crew
+          .filter(p => p.job === "Director")
+          .map(p => p.name)
+          .join(", ");
+        const cast = resp.data.cast
+          .slice(0, 3)
+          .map(p => p.name)
+          .join(", ");
         this.setState({ cast: cast, director: director });
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   render() {
     return (
-      <article className="movie" style={{ background: `rgb(0,0,0,.7) url(${this.state.posterURL}) no-repeat center`}}>
+      <article
+        className="movie"
+        style={{
+          background: `rgb(0,0,0,.7) url(${
+            this.state.posterURL
+          }) no-repeat center`
+        }}
+      >
         <header className="movie__header">
           <div>
             <span className="movie__title">{this.props.movie.title} </span>
-            <span className="movie__year">({this.props.movie.release_date.slice(0, 4)})</span>
+            <span className="movie__year">
+              ({this.props.movie.release_date.slice(0, 4)})
+            </span>
           </div>
         </header>
         <div className="movie__info">
@@ -58,7 +79,7 @@ class SingleMovie extends Component {
           </p>
         </div>
         <div className="movie__actions">
-          <TicketBuy name="movie__buy"/>
+          <TicketBuy name="movie__buy" />
           <MovieDetails
             title={this.props.movie.title}
             release={this.props.movie.release_date}
@@ -67,7 +88,8 @@ class SingleMovie extends Component {
             cast={this.state.cast}
             director={this.state.director}
             overview={this.props.movie.overview}
-            poster={this.state.posterURL} />
+            poster={this.state.posterURL}
+          />
         </div>
       </article>
     );

@@ -36,9 +36,7 @@ const TicketBuy = props => (
             {" "}
             Ticket type: <br />
             <select>
-              <option selected value="15">
-                Normal
-              </option>
+              <option value="15">Normal</option>
               <option value="10">Senior</option>
               <option value="10">Student</option>
             </select>
