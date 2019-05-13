@@ -13,7 +13,7 @@ const TicketBuy = props => (
 
         <div id="seat-map">
           <div className="front">SCREEN</div>
-          <SeatSystem />
+          <div className="test"><SeatSystem /></div>
         </div>
         <div className="booking-details">
           <br />
@@ -200,7 +200,7 @@ class AvailableList extends React.Component {
   render() {
     const seatCount = this.props.available.length;
     return (
-      <div className="left">
+      <div className="seats">
         <h4>
           Available Seats: ({seatCount === 0 ? "No seats available" : seatCount}
           )
@@ -213,7 +213,7 @@ class AvailableList extends React.Component {
 class ReservedList extends React.Component {
   render() {
     return (
-      <div className="right">
+      <div className="seats">
         <h4>Reserved Seats: ({this.props.reserved.length})</h4>
       </div>
     );
