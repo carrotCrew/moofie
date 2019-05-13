@@ -3,7 +3,7 @@
     font-size: 16px;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(40px, auto);
     grid-template-areas: "hd hd hd hd hd hd hd hd hd"
         "sd sd sd sd sd sd main main main"
         "ft ft ft ft ft ft ft ft ft";
@@ -13,11 +13,12 @@
 .modal1>.header {
     grid-area: hd;
     width: 100%;
-    border-bottom: 1px solid gray;
-    font-size: 32px;
+    font-size: 1.4em;
     text-align: center;
-    padding: 5px;
+    padding: 15px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .modal1>.actions {

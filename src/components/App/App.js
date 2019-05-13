@@ -27,7 +27,6 @@ class App extends Component {
     themoviedb
       .get(`genre/movie/list?language=en`)
       .then(resp => {
-        console.log(resp);
         this.setState({ genresArr: resp.data.genres });
       })
       .catch(err => console.log(err));
@@ -36,7 +35,6 @@ class App extends Component {
       .get(`movie/now_playing?language=en&page=1`)
       .then(resp => {
         this.setState({ movies: resp.data.results });
-        console.log(resp);
       })
       .catch(err => console.log(err));
   }

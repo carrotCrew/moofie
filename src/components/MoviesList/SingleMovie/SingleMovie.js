@@ -79,7 +79,7 @@ class SingleMovie extends Component {
           </p>
         </div>
         <div className="movie__actions">
-          <TicketBuy name="movie__buy" />
+          <TicketBuy name="movie__buy" title={this.props.movie.title} />
           <MovieDetails
             title={this.props.movie.title}
             release={this.props.movie.release_date}

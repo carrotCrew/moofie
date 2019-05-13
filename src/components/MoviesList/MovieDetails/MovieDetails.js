@@ -62,8 +62,6 @@ class MovieDetails extends React.Component {
               >
                 Close
               </button>
-
-              <TicketBuy name="button1" />
             </div>
           </div>
         )}

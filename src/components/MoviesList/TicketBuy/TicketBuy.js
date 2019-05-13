@@ -9,16 +9,13 @@ const TicketBuy = props => (
         <button className="close" onClick={close}>
           &times;
         </button>
-        <div className="header"> Seat reservation </div>
+        <div className="header"> {props.title} </div>
 
         <div id="seat-map">
           <div className="front">SCREEN</div>
           <SeatSystem />
         </div>
         <div className="booking-details">
-          <p>
-            Movie: <span> Avengers: Koniec gry</span>
-          </p>
           <br />
           <label className="select-style">
             {" "}
@@ -34,7 +31,7 @@ const TicketBuy = props => (
           <br />
           <label>
             {" "}
-            Ticket type: <br />
+            Tickets type: <br />
             <select>
               <option value="15">Normal</option>
               <option value="10">Senior</option>
@@ -61,7 +58,6 @@ const TicketBuy = props => (
           <button
             className="button1"
             onClick={() => {
-              console.log("modal closed ");
               close();
             }}
           >

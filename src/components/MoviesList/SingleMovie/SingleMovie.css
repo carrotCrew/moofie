@@ -1,5 +1,6 @@
 .movie {
-  height: 400px;
+  height: 450px;
+  max-width: 342px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
