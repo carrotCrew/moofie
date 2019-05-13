@@ -5,15 +5,13 @@ class Footer extends Component{
 render() {
     return (
       <footer className="footer">
-        <div className="TMBD">
-            <span>
-                This product uses the TMDb API but is not endorsed or certified by TMDb.    
-            </span>
-            <img className="footer_logo" src="themoviedb.png" alt="TMDB" />
-        </div>
-        <br/>
+
+        <img className="footer_logo" src="themoviedb.png" alt="TMDB" />
+            <p>
+                This product uses the TMDb API but is not endorsed or certified by TMDb.
+            </p>
         <p>
-            &copy; 2019 Projekt realizowany w ramach kursu: <a href="https://coderscamp.pl/"> Coderscamp.pl </a>
+          <span>&copy; 2019</span> Projekt realizowany w ramach kursu <a href="https://coderscamp.pl/"> CodersCamp </a>
         </p>
       </footer>
     );

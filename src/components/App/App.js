@@ -9,7 +9,7 @@ import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 //Components
 import Header from "../Header/Header";
 import MoviesList from "../MoviesList/MoviesList";
-//import MovieDetails from "../MovieDetails/MovieDetails";
+import Footer from "../Footer/Footer";
 
 library.add(faSearch, faAngleDoubleRight);
 
@@ -55,6 +55,7 @@ class App extends Component {
             searchTerm={this.state.searchTerm}
           />
         </main>
+        <Footer />
       </div>
     );
   }
