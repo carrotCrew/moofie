@@ -17,14 +17,13 @@ class SingleMovie extends Component {
   }
 
   componentDidMount() {
+    this.genresToRender();
+
     const url = `https://image.tmdb.org/t/p/w342${
       this.props.movie.poster_path
     }`;
-    const genresToAdd = getGenre(
-      this.props.movie.genre_ids,
-      this.props.genresArr
-    );
-    this.setState({ posterURL: url, genres: genresToAdd });
+
+    this.setState({ posterURL: url });
 
     themoviedb
       .get(`movie/${this.props.movie.id}/credits?`)
@@ -40,6 +39,18 @@ class SingleMovie extends Component {
         this.setState({ cast: cast, director: director });
       })
       .catch(err => console.log(err));
+  }
+
+  genresToRender = async () => {
+    try {
+      const genresToAdd = await getGenre(
+        this.props.movie.genre_ids,
+        this.props.genresArr
+      );
+      this.setState({ genres: genresToAdd });
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   render() {

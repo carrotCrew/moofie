@@ -1,7 +1,6 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import "./MovieDetails.css";
-import TicketBuy from "../TicketBuy/TicketBuy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class MovieDetails extends React.Component {
