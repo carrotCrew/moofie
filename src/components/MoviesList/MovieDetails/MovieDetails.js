@@ -20,9 +20,6 @@ class MovieDetails extends React.Component {
       >
         {close => (
           <div className="modal">
-            <button className="close" onClick={close}>
-              &times;
-            </button>
             <div className="header">
               {this.props.title} ({this.props.year})
             </div>

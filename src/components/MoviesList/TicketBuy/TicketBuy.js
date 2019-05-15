@@ -6,9 +6,6 @@ const TicketBuy = props => (
   <Popup trigger={<button className={props.name}>Buy tickets!</button>} modal>
     {close => (
       <div className="modal1">
-        <button className="close" onClick={close}>
-          &times;
-        </button>
         <div className="header"> {props.title} </div>
 
         <div id="seat-map">
